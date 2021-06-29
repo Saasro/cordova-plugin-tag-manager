@@ -149,7 +149,7 @@
           } else if (action.equals("dispatch")) {
               if (isOpeningContainer) {
                   try {
-                      //GAServiceManager.getInstance().dispatchLocalHits();
+                      analytics.dispatchLocalHits();
                       callback.success("dispatch sent");
                       return true;
                   } catch (final Exception e) {
