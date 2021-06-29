@@ -27,6 +27,7 @@
   import org.apache.cordova.CordovaPlugin;
   import org.apache.cordova.CordovaInterface;
 
+  import com.google.android.gms.analytics.GoogleAnalytics;
   import com.google.android.gms.common.api.PendingResult;
   import com.google.android.gms.common.api.ResultCallback;
   import com.google.android.gms.tagmanager.Container;
@@ -51,6 +52,8 @@
 
       private Container mContainer;
       private boolean isOpeningContainer = false;
+      private static GoogleAnalytics analytics;
+
 
     public CDVTagManager() {
       }
@@ -64,6 +67,9 @@
           if (action.equals("initGTM")) {
               try {
                   // Set the dispatch interval
+                analytics = GoogleAnalytics.getInstance(cordova.getActivity());
+                analytics.setLocalDispatchPeriod(args.getInt(1)); // Set the dispatch interval
+
                   TagManager tagManager = TagManager.getInstance(this.cordova.getActivity().getApplicationContext());
                   String containerId = args.getString(0);
                   int interval = args.getInt(1);
