@@ -1,5 +1,6 @@
 # Tag Manager
 
+## Removed Jar dependencies and moved to gradle 
 ---
 
 Tag Manager plugin for Android and iOS. It allows you to post usage information to your Google Tag Manager account.
@@ -17,7 +18,7 @@ When being used in combination with AngularJS, it is recommended to use [Angular
 
 ## Installation
 
-    cordova plugin add cordova-plugin-tag-manager
+    cordova plugin add <path to git>
 
 ## Supported Platforms
 
