@@ -74,7 +74,7 @@
                   String containerId = args.getString(0);
                   int interval = args.getInt(1);
 
-                PendingResult<ContainerHolder> pending = tagManager.loadContainerPreferFresh(containerId, -1);
+                PendingResult<ContainerHolder> pending = tagManager.loadContainerPreferNonDefault(containerId, -1);
                   pending.setResultCallback(new ResultCallback<ContainerHolder>() {
                   @Override
                   public void onResult(ContainerHolder containerHolder) {
